@@ -49,7 +49,6 @@ const HomePage = () => {
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Garantindo a precisão dos seus equipamentos para que você foque no que mais importa: a vida
-                Atendimento imediato para emergências em todo o Paraná e Santa Catarina
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact">
@@ -63,6 +62,10 @@ const HomePage = () => {
                     Nossos Serviços
                   </Button>
                 </Link>
+          <div className="hidden lg:block text-lg font-medium text-gray-600 mt-4 w-full">
+
+            Disponível 24/7 para emergências Curitiba e Região Metropolitana
+          </div>
               </div>
             </motion.div>
 

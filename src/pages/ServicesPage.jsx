@@ -7,57 +7,42 @@ const ServicesPage = () => {
   const services = [
     {
       icon: Wrench,
-      title: 'Manutenção Preventiva',
-      description: 'Programas de manutenção agendada para prevenir falhas em equipamentos e estender a vida útil de dispositivos médicos.',
+      title: 'Manutenção Preventiva e Corretiva:',
+      description: ' Inspeções rigorosas e reparos ágeis para evitar interrupções e maximizar a vida útil dos seus ativos.',
       features: [
-        'Inspeções regulares de equipamentos',
-        'Protocolos de serviço agendados',
-        'Otimização de desempenho',
-        'Relatórios detalhados de manutenção'
+        
       ]
     },
     {
       icon: AlertCircle,
-      title: 'Reparos de Emergência',
-      description: 'Serviço de resposta rápida 24/7 para falhas críticas de equipamentos e necessidades urgentes de manutenção.',
+      title: 'Gestão de Equipamentos (Engenharia Clínica):',
+      description: 'Estratégias completas que abrangem desde o inventário e aquisição até o descarte seguro, garantindo máxima eficiência operacional.',
       features: [
-        'Resposta imediata a emergências',
-        'Serviços de reparo no local',
-        'Prioridade para equipamentos críticos',
-        'Garantia de tempo de inatividade mínimo'
+        
       ]
     },
     {
       icon: Activity,
-      title: 'Calibração de Equipamentos',
-      description: 'Serviços de calibração de precisão garantindo que o equipamento médico atenda aos padrões regulatórios e requisitos de precisão.',
+      title: 'Calibração e Testes de Segurança:',
+      description: 'Ensaios rigorosos para assegurar a precisão dos diagnósticos e a total conformidade com as normas regulatórias vigentes.',
       features: [
-        'Teste de conformidade regulatória',
-        'Verificação de medição de precisão',
-        'Documentação e certificação',
-        'Protocolos de garantia de qualidade'
+       
       ]
     },
     {
       icon: Settings,
-      title: 'Instalação e Configuração',
-      description: 'Instalação profissional e configuração de novos equipamentos e sistemas médicos.',
+      title: 'Consultoria Técnica:',
+      description: 'Apoio especializado na escolha de novas tecnologias, garantindo investimentos inteligentes alinhados às necessidades da sua instituição.',
       features: [
-        'Instalação especializada de equipamentos',
-        'Serviços de integração de sistemas',
-        'Programas de treinamento de equipe',
-        'Registro de garantia'
+       
       ]
     },
     {
       icon: Shield,
-      title: 'Inspeções de Segurança',
-      description: 'Auditorias de segurança abrangentes e verificações de conformidade para todos os equipamentos médicos e instalações.',
+      title: 'Treinamento e Capacitação:',
+      description: 'Programas de educação continuada para equipes de saúde, focados no uso correto, seguro e eficiente de cada dispositivo.',
       features: [
-        'Auditorias de conformidade de segurança',
-        'Avaliações de risco',
-        'Verificação de padrões regulatórios',
-        'Certificação de segurança'
+       
       ]
     },
     {
@@ -65,10 +50,7 @@ const ServicesPage = () => {
       title: 'Contratos de Manutenção',
       description: 'Acordos de manutenção flexíveis adaptados às necessidades específicas e orçamento da sua instalação.',
       features: [
-        'Planos de serviço personalizados',
-        'Agendamento prioritário',
-        'Soluções econômicas',
-        'Garantias de desempenho'
+        
       ]
     }
   ];
@@ -118,7 +100,7 @@ const ServicesPage = () => {
               <div className="flex items-start gap-4 bg-blue-50 rounded-lg p-4">
                 <Clock className="text-blue-600 shrink-0 mt-1" size={24} />
                 <div>
-                  <h3 className="font-semibold text-blue-900 mb-1">Disponibilidade 24/7</h3>
+                  <h3 className="font-semibold text-blue-900 mb-1">Disponível 24/7 para emergências Curitiba e Região Metropolitana</h3>
                   <p className="text-gray-600 text-sm">Suporte 24 horas para todas as suas necessidades de manutenção</p>
                 </div>
               </div>

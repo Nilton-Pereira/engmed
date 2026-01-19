@@ -1,45 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const ContactPage = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Informações Faltando",
-        description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    toast({
-      title: "Envio de Formulário",
-      description: "🚧 Este recurso ainda não está implementado, mas não se preocupe! Você pode solicitá-lo no seu próximo prompt! 🚀",
-    });
-  };
-
   return (
     <>
       <Helmet>
@@ -57,23 +21,21 @@ const ContactPage = () => {
           >
             <h1 className="text-5xl font-bold text-blue-900 mb-6">Entre em Contato</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Fale com nossa equipe para soluções profissionais de manutenção hospitalar. Estamos aqui para ajudar 24/7.
+              Fale com nossa equipe para soluções profissionais de manutenção hospitalar. Estamos aqui para ajudar.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="max-w-3xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
               <div>
                 <h2 className="text-3xl font-bold text-blue-900 mb-6">Fale Conosco</h2>
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  Tem dúvidas sobre nossos serviços? Precisa de suporte de manutenção de emergência? Nossa equipe especializada está pronta para ajudá-lo. Entre em contato hoje e descubra como podemos ajudar a manter os equipamentos e operações da sua instalação médica.
-                </p>
+                
               </div>
 
               <div className="space-y-6">
@@ -94,8 +56,8 @@ const ContactPage = () => {
                     <Phone className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-blue-900 mb-2">Ligue para Nós</h3>
-                    <p className="text-gray-600">Disponível 24/7 para emergências</p>
+                    <h3 className="font-semibold text-blue-900 mb-2">Ligue para Nós - (041) 99999-9999</h3>
+                    <p className="text-gray-600">Disponível 24/7 para emergências Curitiba e Região Metropolitana</p>
                   </div>
                 </div>
 
@@ -105,119 +67,23 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-blue-900 mb-2">Área de Atuação</h3>
-                    <p className="text-gray-600">Atendendo Instalações Médicas em Todo o País</p>
+                    <p className="text-gray-600"> Atendimento 24h no Paraná e Santa Catarina.</p>
                   </div>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-blue-600 to-green-600 rounded-xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">Suporte de Emergência</h3>
-                <p className="text-blue-50 mb-4">
-                  Para necessidades urgentes de manutenção ou falhas de equipamento, nossa equipe de resposta a emergências está disponível 24 horas por dia para garantir o mínimo de interrupção nas suas operações.
+                <p className="text-blue-50 mb-4 whitespace-pre-line">
+                  {`Para garantir tranquilidade e segurança operacional, oferecemos suporte de emergência 24 horas, com resposta rápida para situações críticas.
+
+Tempo de Resposta Garantido:
+
+Curitiba e Região Metropolitana: até 2 horas.
+
+Outras cidades do Paraná e Santa Catarina: atendimento com agendamento prévio, alinhado conforme a necessidade do cliente e logística de deslocamento.`}
                 </p>
-                <p className="font-semibold">Tempo de Resposta: &lt; 2 Horas</p>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-2xl p-8 space-y-6">
-                <h2 className="text-2xl font-bold text-blue-900 mb-6">Envie uma Mensagem</h2>
-
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Nome Completo *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                    placeholder="João Silva"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Endereço de E-mail *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                    placeholder="joao@exemplo.com"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Número de Telefone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                    placeholder="(11) 99999-9999"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Assunto
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                    placeholder="Como podemos ajudar?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Mensagem *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows="5"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
-                    placeholder="Conte-nos sobre suas necessidades de manutenção..."
-                    required
-                  ></textarea>
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Enviar Mensagem
-                  <Send className="ml-2" size={20} />
-                </Button>
-
-                <p className="text-sm text-gray-500 text-center">
-                  Retornaremos em até 24 horas
-                </p>
-              </form>
             </motion.div>
           </div>
         </div>
