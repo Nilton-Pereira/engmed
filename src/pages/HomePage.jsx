@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Clock, Award, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+
 const HomePage = () => {
+  const [textIndex, setTextIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextIndex((prev) => (prev + 1) % 2);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const heroTexts = [
+    "Garantindo a precisão dos seus equipamentos para que você foque no que mais importa: a vida",
+    "Suporte de emergência disponível 24/7 em Curitiba e Região Metropolitana, Atendendo também demandas no Paraná e Santa Catarina."
+  ];
+
   const features = [
     {
       icon: Shield,
@@ -47,9 +62,21 @@ const HomePage = () => {
               <h1 className="text-5xl lg:text-6xl font-bold text-blue-900 mb-6 leading-tight">
                 Excelência em Engenharia Clínica e Manutenção Hospitalar
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Garantindo a precisão dos seus equipamentos para que você foque no que mais importa: a vida
-              </p>
+              <div className="h-32 mb-8 relative">
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={textIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-xl text-gray-600 leading-relaxed absolute top-0 left-0 w-full"
+                  >
+                    {heroTexts[textIndex]}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
+
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
@@ -62,10 +89,7 @@ const HomePage = () => {
                     Nossos Serviços
                   </Button>
                 </Link>
-          <div className="hidden lg:block text-lg font-medium text-gray-600 mt-4 w-full">
-
-            Disponível 24/7 para emergências Curitiba e Região Metropolitana
-          </div>
+          
               </div>
             </motion.div>
 
@@ -76,7 +100,7 @@ const HomePage = () => {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img className="w-full h-auto rounded-2xl" alt="Equipamento hospitalar moderno e instalação médica" src="https://images.unsplash.com/photo-1580281657702-257584239a55" />
+                <img className="w-full h-[500px] lg:h-[650px] object-cover rounded-2xl" alt="Equipamento hospitalar moderno e instalação médica" src="src/image/imagemhomepage.jpg" />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
               </div>
             </motion.div>

@@ -83,7 +83,7 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img className="w-full rounded-2xl shadow-2xl" alt="Serviços de manutenção hospitalar e equipamentos médicos" src="https://images.unsplash.com/photo-1580281657702-257584239a55" />
+              <img className="w-full rounded-2xl shadow-2xl" alt="Serviços de manutenção hospitalar e equipamentos médicos" src="src/image/servicos.jpg" />
             </motion.div>
 
             <motion.div
@@ -102,6 +102,14 @@ const ServicesPage = () => {
                 <div>
                   <h3 className="font-semibold text-blue-900 mb-1">Disponível 24/7 para emergências Curitiba e Região Metropolitana</h3>
                   <p className="text-gray-600 text-sm">Suporte 24 horas para todas as suas necessidades de manutenção</p>
+                </div>
+              </div>
+
+                 <div className="flex items-start gap-4 bg-blue-50 rounded-lg p-4">
+                <Clock className="text-blue-600 shrink-0 mt-1" size={24} />
+                <div>
+                  <h3 className="font-semibold text-blue-900 mb-1">Atendimentos no Paraná e Santa Catarina</h3>
+                  <p className="text-gray-600 text-sm"></p>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-green-50 rounded-lg p-4">

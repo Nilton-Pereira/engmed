@@ -55,7 +55,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img className="w-full rounded-2xl shadow-2xl" alt="Técnico de manutenção médica trabalhando em equipamento hospitalar" src="https://images.unsplash.com/photo-1588776813677-77aaf5595b83" />
+              <img className="w-full rounded-2xl shadow-2xl" alt="Técnico de manutenção médica trabalhando em equipamento hospitalar" src="src/image/quemsomos.jpg" />
             </motion.div>
 
             <motion.div
