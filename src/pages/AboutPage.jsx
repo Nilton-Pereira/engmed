@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Target, Eye, Award, Users, Zap, Heart } from 'lucide-react';
+import aboutImg from '@/image/quemsomos.jpg';
 
 const AboutPage = () => {
   const values = [
@@ -55,7 +56,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img className="w-full rounded-2xl shadow-2xl" alt="Técnico de manutenção médica trabalhando em equipamento hospitalar" src="src/image/quemsomos.jpg" />
+              <img className="w-full rounded-2xl shadow-2xl" alt="Técnico de manutenção médica trabalhando em equipamento hospitalar" src={aboutImg} />
             </motion.div>
 
             <motion.div

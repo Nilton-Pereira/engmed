@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Wrench, Clock, Shield, CheckCircle, Activity, Settings, AlertCircle, FileText } from 'lucide-react';
+import servicesImg from '@/image/servicos.jpg';
 
 const ServicesPage = () => {
   const services = [
@@ -83,7 +84,7 @@ const ServicesPage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <img className="w-full rounded-2xl shadow-2xl" alt="Serviços de manutenção hospitalar e equipamentos médicos" src="src/image/servicos.jpg" />
+              <img className="w-full rounded-2xl shadow-2xl" alt="Serviços de manutenção hospitalar e equipamentos médicos" src={servicesImg} />
             </motion.div>
 
             <motion.div

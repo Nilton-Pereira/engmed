@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Clock, Award, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import heroImg from '@/image/imagemhomepage.jpg';
 
 
 const HomePage = () => {
@@ -100,7 +101,7 @@ const HomePage = () => {
               className="relative"
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img className="w-full h-[500px] lg:h-[650px] object-cover rounded-2xl" alt="Equipamento hospitalar moderno e instalação médica" src="src/image/imagemhomepage.jpg" />
+                <img className="w-full h-[500px] lg:h-[650px] object-cover rounded-2xl" alt="Equipamento hospitalar moderno e instalação médica" src={heroImg} />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
               </div>
             </motion.div>
