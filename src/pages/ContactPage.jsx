@@ -67,7 +67,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-blue-900 mb-2">Área de Atuação</h3>
-                    <p className="text-gray-600"> Atendimento 24h no Paraná e Santa Catarina.</p>
+                    <p className="text-gray-600"> Atendimento no Paraná e Santa Catarina.</p>
                   </div>
                 </div>
               </div>
